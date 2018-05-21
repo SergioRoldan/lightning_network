@@ -65,7 +65,7 @@ contract Channel is Multiownable, CryptoHandler, Expirable {
             Require previousHash = _msgHash
             Require valid signature
         */
-        bytes32 msgHash = computeHash(_values_id, _end_chann);
+        bytes32 msgHash = keccak256(_values_id, _end_chann);
         require(verifyBytes32(msgHash, _msgHash) && verifySignature(_end_chann[0], prefixSignHash(_msgHash), _v, _r_s[0], _r_s[1]));
         
         /**
@@ -132,7 +132,7 @@ contract Channel is Multiownable, CryptoHandler, Expirable {
             Require previousHash = _msgHash
             Require valid signature
         */
-        bytes32 msgHash = computeHash(_values_id, _end_chann);
+        bytes32 msgHash = keccak256(_values_id, _end_chann);
         require(verifyBytes32(msgHash, _msgHash) && verifySignature(_end_chann[0], prefixSignHash(_msgHash), _v, _r_s[0], _r_s[1]));
         
         /**

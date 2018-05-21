@@ -1,8 +1,8 @@
 var CryptoHandler = artifacts.require("./CryptoHandler.sol");
-var Test = artifacts.require("./Test.sol");
+var Factory = artifacts.require("./Factory.sol");
 
 module.exports = function(deployer) {
   deployer.deploy(CryptoHandler);
-  deployer.link(CryptoHandler, Test);
-  deployer.deploy(Test);
+  deployer.link(CryptoHandler, Factory)
+  deployer.deploy(Factory);
 };
